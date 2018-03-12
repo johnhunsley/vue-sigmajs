@@ -9,4 +9,4 @@ A Vue.js wrapper for Sigma.js
 
 ### Install
 
-  - **npm** install: `npm install vue-sigmajs sigma.js --save`
+  - **npm** install: `npm install vue-sigmajs --save`
