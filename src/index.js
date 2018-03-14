@@ -1,11 +1,7 @@
-import { Basic } from './BaseSigma'
+import { BaseSigma } from './components/BaseSigma.vue'
 
 const VueSigma = {
-  Basic
+  BaseSigma
 }
 
 export Default VueSigma
-
-export {
-  VueCharts
-}

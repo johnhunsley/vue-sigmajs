@@ -2,21 +2,53 @@
   <div class="container">
     <div class="Sigma">
       <h1 style="text-align:center;">Basic Example</h1>
-      <basic-example></basic-example>
+      <base-sigma :nodes='nodes' :edges='edges'></base-sigma>
     </div>
   </div>
 </template>
 
 <script>
-import BasicExample from './BasicExample.js'
+import BaseSigma from './../components/BaseSigma.vue'
 
 export default {
   components: {
-    BasicExample
+    BaseSigma
   },
   data () {
     return {
+      N: 50,
+      E: 100,
+      nodes: [],
+      edges: []
     }
+  },
+  methods: {
+    populate: function () {
+      // Generate a random graph:
+      for (var i = 0; i < this.N; i++) {
+        this.nodes.push({
+          id: 'n' + i,
+          label: 'Node ' + i,
+          x: Math.random(),
+          y: Math.random(),
+          size: Math.random(),
+          color: '#666'
+        })
+      }
+
+      for (var j = 0; j < this.E; j++) {
+        this.edges.push({
+          id: 'e' + j,
+          source: 'n' + (Math.random() * this.N | 0),
+          target: 'n' + (Math.random() * this.N | 0),
+          size: Math.random(),
+          color: '#ccc'
+        })
+      }
+    }
+  },
+  mounted: function () {
+    this.populate()
   }
 }
 </script>
@@ -24,6 +56,7 @@ export default {
 <style>
 .container {
     max-width: 800px;
+    height: 800px;
     margin: 0 auto;
 }
 h1 {

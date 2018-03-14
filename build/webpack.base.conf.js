@@ -42,6 +42,11 @@ module.exports = {
         options: vueLoaderConfig
       },
       {
+        test: /\sigma.*\.js?$/,
+        exclude: ['src'],
+        loaders: ['script']
+      },
+      {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test')]

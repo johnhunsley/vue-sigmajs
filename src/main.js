@@ -2,7 +2,6 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './examples/App'
-console.log('main')
 /* eslint-disable no-new */
 new Vue({
   render: h => h(App)
